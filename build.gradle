@@ -7,7 +7,7 @@ plugins {
 
 ext {
     // The drivers we want to use
-    drivers = ["firefox", "chrome", "chromeHeadless", "remote"]
+    drivers = ["driver"]
 
     ext {
         groovyVersion = '2.4.12'
@@ -50,7 +50,7 @@ drivers.each { driver ->
         outputs.upToDateWhen { false }  // Always run tests
 
         systemProperty "geb.build.reportsDir", reporting.file("geb/$name")
-        systemProperty "geb.env", driver
+        systemProperty "geb.env", "remote"
     }
 }
 
