@@ -7,7 +7,7 @@ plugins {
 
 ext {
     // The drivers we want to use
-    drivers = ["firefox", "chrome", "chromeHeadless"]
+    drivers = ["firefox", "chrome", "chromeHeadless", "remote"]
 
     ext {
         groovyVersion = '2.4.12'

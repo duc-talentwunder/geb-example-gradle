@@ -8,6 +8,8 @@
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
+import org.openqa.selenium.remote.DesiredCapabilities
+import org.openqa.selenium.remote.RemoteWebDriver
 
 waiting {
 	timeout = 2
@@ -37,6 +39,13 @@ environments {
 		atCheckWaiting = 1
 
 		driver = { new FirefoxDriver() }
+	}
+
+	remote {
+		driver = {
+			def remoteWebDriverServerUrl = new URL("http://localhost:4444")
+			new RemoteWebDriver(remoteWebDriverServerUrl, DesiredCapabilities.chrome())
+		}
 	}
 
 }
